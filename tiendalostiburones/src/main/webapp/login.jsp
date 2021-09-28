@@ -31,14 +31,14 @@
 
 <body>
 	<!-- Navbar-->
-	<nav class="navbar navbar-dark bg-dark">
+	<nav class="navbar navbar-white bg-dark">
 		<div class="container-fluid">
 			<a class="navbar-brand links" href="index.html"> <i
 				class="fas fa-fish"></i> Tienda Los Tiburones
 			</a>
 		</div>
 	</nav>
-	
+
 	<!-- Contenedor de los botones y texto -->
 	<div class="container">
 		<div class="position-absolute top-50 start-50 translate-middle login">
@@ -47,27 +47,26 @@
 			</H1>
 			<div class="input-group mb-3">
 				<span class="input-group-text" id="basic-addon1"><i
-					class="fas fa-user-shield"></i></span> 
-					<input id="inputuser" type="text"
+					class="fas fa-user-shield"></i></span> <input id="inputuser" type="text"
 					class="form-control" placeholder="Username" aria-label="Username"
 					aria-describedby="basic-addon1">
 			</div>
 
 			<div class="input-group mb-3">
 				<span class="input-group-text" id="basic-addon1"><i
-					class="fas fa-key"></i> </span> 
-					<input id="inputpass" type="password"
+					class="fas fa-key"></i> </span> <input id="inputpass" type="password"
 					class="form-control" placeholder="Password" aria-label="Password"
 					aria-describedby="basic-addon1">
 			</div>
 			<div style="margin: auto; text-align: center;">
 				<button type="button" class="btn btn-success" onclick="comparar()">
 					<i class="fas fa-sign-in-alt"></i> Iniciar Sesión
-				</button>s
+				</button>
+				
 				<button type="button" class="btn btn-warning">
 					<i class="fas fa-clipboard-list"></i> Registrarse
 				</button>
-				
+
 				<div id="error" class="alert alert-danger visually-hidden"
 					role="alert">Usuario o contraseña incorrecta!</div>
 
@@ -92,7 +91,7 @@
 			-->
 		</div>
 	</nav>
-	
+
 	<!-- Script que trae la informacion de la api y la compara con las entradas -->
 	<script>
 		function comparar() {
@@ -112,17 +111,17 @@
 				if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
 					//convirtiendo JSON en variable javascrip
 					var usuarios = JSON.parse(xmlhttp.responseText);
-					
+
 					//verificando uno por uno si existe ese usuario
 					for (i = 0; i < usuarios.length; i++) {
-						
+
 						//imprimiendo en la consola del navegador pata verificar
 						console.log(usuarios);
 						console.log(x);
 						console.log(usuarios[i].usuario);
 						console.log(y);
 						console.log(usuarios[i].password);
-						
+
 						//si el nombre coincide
 						if (usuarios[i].usuario === x) {
 							//si la clave coincide
@@ -147,7 +146,7 @@
 					}
 					//Si no existe el usuario
 					console.log("no encontrado");
-					
+
 					//quitando la capacidad de ocultacion del error para mostrarlo
 					var element = document.getElementById("error");
 					element.classList.remove("visually-hidden");
