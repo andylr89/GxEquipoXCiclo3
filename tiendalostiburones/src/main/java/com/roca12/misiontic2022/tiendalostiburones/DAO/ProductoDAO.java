@@ -202,7 +202,7 @@ public class ProductoDAO {
 					+ "nombre_producto = '"+product.getNombre_producto()+"',"
 					+ "nit_proveedor = "+product.getNit_proveedor()+","
 					+ "precio_compra = "+product.getPrecio_compra()+","
-					+ "precio_venta = "+product.getPrecio_venta()+""
+					+ "precio_venta = "+product.getPrecio_venta()+","
 					+ "WHERE codigo_producto = "+product.getCodigo_producto()+";";
 			
 			//ejecuta la sentencia 
